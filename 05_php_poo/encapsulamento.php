@@ -19,8 +19,13 @@
                 return $this->$atributo;
             }
             public function __set($atributo, $valor){
-                if(strlen($atributo) >= 3){
-                    $this->$atributo = $valor;
+                $this->$atributo = $valor;
+            }
+            public function setNome($valor){
+                if(strlen($valor) >= 3){
+                    $this->nome = $valor;
+                }else{
+                    $this->nome = '(Invalide Name)';
                 }
             }
 
@@ -43,8 +48,9 @@
         }
 
         $pai_01 = new Pai();
-        $pai_01->__set('nome', 'João Paulo');
+        $pai_01->setNome('JP'); // usando set específico para $nome
         $pai_01->__set('sobrenome', 'Silva');
+        
         echo $pai_01->__get('nome') . ' ' . $pai_01->__get('sobrenome');
         echo '</br>';
         echo $pai_01->executarAcao();

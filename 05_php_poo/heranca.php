@@ -63,9 +63,13 @@
 
         echo '<h4>Carro</h4>';
         $carro_01->abrirTetoSolar();
+        echo '<br>';
+        $carro_01->alterarPosicaoVolante();
 
         echo '<h4>Moto</h4>';
         $moto_01->acelerar();
+        echo '<br>';
+        $moto_01->empinar();
         echo '<hr>';
     ?>
 </body>
